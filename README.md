@@ -104,9 +104,30 @@ Key insights from the project include correlations between Sentinel-2 spectral b
 ## Data Insights
 Below is the `df.info()` summary for each lake analyzed in the project:
 
-- **Lake 1**:
+- **Lake Erie**:
   ```plaintext
-  <DataFrame info for Lake 1>
+  Index: 611 entries, 476 to 7161
+Data columns (total 17 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   Site_name        611 non-null    object 
+ 1   Country          611 non-null    object 
+ 2   Country_code     611 non-null    object 
+ 3   Latitude         566 non-null    float64
+ 4   Longitude        566 non-null    float64
+ 5   Date_Time_UTC    611 non-null    object 
+ 6   Water_body_type  611 non-null    int64  
+ 7   Water_type       564 non-null    float64
+ 8   Depth            535 non-null    float64
+ 9   Chla             584 non-null    float64
+ 10  TSS              550 non-null    float64
+ 11  Turbidity        466 non-null    float64
+ 12  Secchi_depth     543 non-null    float64
+ 13  Chla_plus_phaeo  49 non-null     float64
+ 14  aCDOM440         92 non-null     float64
+ 15  Date             611 non-null    object 
+ 16  Time             611 non-null    object 
+dtypes: float64(10), int64(1), object(6)
   ```
 
 - **Lake 2**:
