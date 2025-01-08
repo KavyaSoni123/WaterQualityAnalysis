@@ -105,37 +105,40 @@ Key insights from the project include correlations between Sentinel-2 spectral b
 Below is the `df.info()` summary for each lake analyzed in the project:
 
 - **Lake Erie**:
-  ```plaintext
-  Index: 611 entries, 476 to 7161
-Data columns (total 17 columns):
- #   Column           Non-Null Count  Dtype  
----  ------           --------------  -----  
- 0   Site_name        611 non-null    object 
- 1   Country          611 non-null    object 
- 2   Country_code     611 non-null    object 
- 3   Latitude         566 non-null    float64
- 4   Longitude        566 non-null    float64
- 5   Date_Time_UTC    611 non-null    object 
- 6   Water_body_type  611 non-null    int64  
- 7   Water_type       564 non-null    float64
- 8   Depth            535 non-null    float64
- 9   Chla             584 non-null    float64
- 10  TSS              550 non-null    float64
- 11  Turbidity        466 non-null    float64
- 12  Secchi_depth     543 non-null    float64
- 13  Chla_plus_phaeo  49 non-null     float64
- 14  aCDOM440         92 non-null     float64
- 15  Date             611 non-null    object 
- 16  Time             611 non-null    object 
-dtypes: float64(10), int64(1), object(6)
-  ```
+  <img width="390" alt="Screenshot 2025-01-08 at 3 33 35 PM" src="https://github.com/user-attachments/assets/ccec0185-11fb-4884-8702-2cabdd1849b8" />
 
-- **Lake 2**:
-  ```plaintext
-  <DataFrame info for Lake 2>
-  ```
+- **Gulf of Mexico, FL**:
+  <img width="398" alt="Screenshot 2025-01-08 at 3 34 36 PM" src="https://github.com/user-attachments/assets/2abe6cda-ba56-40eb-beff-075c81376d8b" />
 
-(Add similar summaries for each lake included in the analysis.)
+- **Lake Geneva**:
+  <img width="405" alt="Screenshot 2025-01-08 at 3 36 11 PM" src="https://github.com/user-attachments/assets/ddb925ca-2c3b-4d0a-b6ba-05f869bdbb1e" />
+
+- **IJsselmeer**:
+ <img width="400" alt="Screenshot 2025-01-08 at 3 36 58 PM" src="https://github.com/user-attachments/assets/f076e5d6-a900-42a2-8d16-a5438deb6bb2" />
+
+- **Guiana**:
+  <img width="394" alt="Screenshot 2025-01-08 at 3 37 43 PM" src="https://github.com/user-attachments/assets/5bb63c10-26a7-4f5f-9ba3-fe0c602ce227" />
+
+- **Gulf of Mexico**:
+<img width="394" alt="Screenshot 2025-01-08 at 3 38 41 PM" src="https://github.com/user-attachments/assets/8227ef52-fcb5-4943-b2b1-e4c0c2904dc8" />
+
+- **Taihu**:  
+<img width="398" alt="Screenshot 2025-01-08 at 3 39 32 PM" src="https://github.com/user-attachments/assets/d8584654-cf86-457e-9690-270f3532c96f" />
+
+- **English Channel**:
+<img width="394" alt="Screenshot 2025-01-08 at 3 41 38 PM" src="https://github.com/user-attachments/assets/0c8fc30b-d726-472b-bb4f-67f033cd15a4" />
+
+- **Garda**:  
+<img width="397" alt="Screenshot 2025-01-08 at 3 42 23 PM" src="https://github.com/user-attachments/assets/1aec2434-86ba-4048-8dad-aa1b7d29cc3d" />
+
+- **Lake Kasumigaura**:  
+<img width="394" alt="Screenshot 2025-01-08 at 3 43 09 PM" src="https://github.com/user-attachments/assets/0fe3f889-2591-46d9-9c42-142c3002d4f6" />
+
+- **Chesapeake Bay, MD**:  
+<img width="395" alt="Screenshot 2025-01-08 at 3 43 58 PM" src="https://github.com/user-attachments/assets/4f96f6c8-602e-4603-abc7-246c2303ef57" />
+
+- **Atlantic Ocean, GA**:  
+<img width="392" alt="Screenshot 2025-01-08 at 3 44 34 PM" src="https://github.com/user-attachments/assets/3ea61eb4-40e2-4041-a132-c208a766e780" />
 
 ## Future Work
 - Expand the analysis to include additional water bodies globally.
