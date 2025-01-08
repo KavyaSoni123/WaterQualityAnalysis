@@ -159,6 +159,7 @@ Below is the `df.info()` summary for each lake analyzed in the project:
 
 ## Contributors
 - **Kavya Soni**
+- **Sujal Rajput**
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
