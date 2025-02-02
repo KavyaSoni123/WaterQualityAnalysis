@@ -8,7 +8,7 @@ ee.Initialize(project="ee-sujalrajput10")
 file_path = "C:/Users/sujal/OneDrive/Desktop/Projects/Sattelite_data/Adding_data/WaterQualityAnalysis/data/FInal_dataset/Lake_erie_final.csv"
 AOI = ee.Geometry.Polygon([[-83.5, 41.6], [-83.5, 41.7], [-83.3, 41.7], [-83.3, 41.6]])
 timeframe = 3
-subfolder = "temp"
+subfolder = "Gemstat_Data_merged_sattelite"
 name = "works2"
 
 

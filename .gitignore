@@ -76,3 +76,7 @@ notebooks/temp/
 # Ignore VS Code workspace settings
 .vscode/
 *.code-workspace
+
+
+#Ignore Test Files
+test*.py
