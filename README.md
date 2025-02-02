@@ -1,5 +1,5 @@
 # Note
-After making the enviroment, run  **earthengine authenticate** in terminal to authenticate your account
+After making the enviroment, run  **earthengine authenticate** in terminal to authenticate your account. You only need to autheticate once
 
 
 # Water Quality Analysis Project
