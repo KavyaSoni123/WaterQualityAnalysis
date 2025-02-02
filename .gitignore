@@ -1,0 +1,71 @@
+# Ignore Python bytecode and cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+env/
+
+# Ignore environment variables or secret files
+.env
+*.env
+config.json
+secrets.json
+
+# Ignore IDE and editor-specific files
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Ignore logs and temporary files
+logs/
+*.log
+debug.log
+*.out
+*.tmp
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore dependencies (if using Poetry)
+.poetry/
+
+# Ignore compiled C extensions
+*.so
+
+# Ignore database and migration files
+*.sqlite3
+*.db
+migrations/
+
+# Ignore coverage reports
+.coverage
+htmlcov/
+*.cover
+*.pycoverage
+nosetests.xml
+coverage.xml
+
+# Ignore testing and profiling output
+.tox/
+.nox/
+.pytest_cache/
+*.prof
+
+# Ignore macOS and Windows system files
+.DS_Store
+Thumbs.db
+
+# Ignore build artifacts
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Ignore lock files
+Pipfile.lock
+poetry.lock
+
+# Ignore data files
+data/raw/
+data/temp/
