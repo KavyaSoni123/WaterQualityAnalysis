@@ -69,3 +69,6 @@ poetry.lock
 # Ignore data files
 data/raw/
 data/temp/
+
+#ignore notebooks
+notebooks/temp/
