@@ -16,9 +16,7 @@ except Exception as e:
 
 
 DATA_AOI_DICT = {
-    "Lake_erie_final": ee.Geometry.Polygon(
-        [[-83.5, 41.6], [-83.5, 41.7], [-83.3, 41.7], [-83.3, 41.6]]
-    ),
+    # AOI for Lake Baikal
     "Lake_baikal": ee.Geometry.Polygon(
         [
             [102.71284237056808, 50.95014919458215],
@@ -28,9 +26,10 @@ DATA_AOI_DICT = {
             [102.71284237056808, 50.95014919458215],
         ]
     ),
+    # add more lakes here(no chat gpt for AOI)
 }
 
-timeframes = [7]
+timeframes = [1, 3, 5, 7, 14]
 
 
 # Lake erie coordinate(kept for tesing purposes)
