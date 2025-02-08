@@ -15,9 +15,27 @@ except Exception as e:
     print("Error initializing Earth Engine:", e)
 
 
-AOI = ee.Geometry.Polygon([[-83.5, 41.6], [-83.5, 41.7], [-83.3, 41.7], [-83.3, 41.6]])
-timeframes = [3, 5, 7, 14]
-dataset_name = "Lake_erie_final"
+DATA_AOI_DICT = {
+    "Lake_erie_final": ee.Geometry.Polygon(
+        [[-83.5, 41.6], [-83.5, 41.7], [-83.3, 41.7], [-83.3, 41.6]]
+    ),
+    "Lake_baikal": ee.Geometry.Polygon(
+        [
+            [102.71284237056808, 50.95014919458215],
+            [111.61176815181808, 50.95014919458215],
+            [111.61176815181808, 55.991032052704064],
+            [102.71284237056808, 55.991032052704064],
+            [102.71284237056808, 50.95014919458215],
+        ]
+    ),
+}
+
+timeframes = [7]
+
+
+# Lake erie coordinate(kept for tesing purposes)
+# AOI = ee.Geometry.Polygon([[-83.5, 41.6], [-83.5, 41.7], [-83.3, 41.7], [-83.3, 41.6]])
+# dataset_name = "Lake_erie_final"
 
 
 def main(AOI, dataset_name, timeframe, subfolder, name):
@@ -66,25 +84,24 @@ def main(AOI, dataset_name, timeframe, subfolder, name):
 
 
 if __name__ == "__main__":
-    subfolder = dataset_name
+    for dataset_name, AOI in DATA_AOI_DICT.items():
+        subfolder = dataset_name  # Create a folder per dataset
 
-    for time in timeframes:
-        # Starting message with emojis and text
-        print(
-            Fore.CYAN
-            + f"⏳ Starting to create dataset for {time}-day time span... ⏳"
-            + Style.RESET_ALL
-        )
-        print("\n" * 2)  # Adding some space
+        for time in timeframes:
+            print(
+                Fore.CYAN
+                + f"⏳ Processing {dataset_name} for {time}-day time span... ⏳"
+                + Style.RESET_ALL
+            )
+            print("\n" * 2)
 
-        name = f"{time}_days"
-        main(AOI, dataset_name, time, subfolder, name)
+            name = f"{dataset_name}_{time}_days"
+            main(AOI, dataset_name, time, subfolder, name)
 
-        # Ending message with emojis and text
-        print("\n" * 2)  # Adding space before the end message
-        print(
-            Fore.GREEN
-            + f"✅ Data creation complete for {time}-day time span! ✅"
-            + Style.RESET_ALL
-        )
-        print("\n" * 2)  # Adding space after the end message
+            print("\n" * 2)
+            print(
+                Fore.GREEN
+                + f"✅ Completed {dataset_name} for {time}-day time span! ✅"
+                + Style.RESET_ALL
+            )
+            print("\n" * 2)
