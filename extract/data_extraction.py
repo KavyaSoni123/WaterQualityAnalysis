@@ -18,7 +18,7 @@ def data_extract_df(AOI, coordinates, date, cloud_threshold=20, days=3):
     Returns:
         pd.DataFrame: A DataFrame containing the extracted satellite data for the given coordinates.
     """
-    print(date)
+    print(f"Extracting data for date: {date.strftime('%Y-%m-%d')}")
     try:
         # Validate input arguments
         if not AOI:

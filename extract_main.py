@@ -49,6 +49,7 @@ def main(AOI, dataset_name, timeframe, subfolder, name):
 
     final_df = pd.DataFrame()
     for i in range(len(cooridinates)):
+        print(f"\nCurrent dataset is {dataset_name}")
         final_df = pd.concat(
             [final_df, data_extract_df(AOI, cooridinates[i], dates[i], days=timeframe)],
             ignore_index=True,
@@ -95,6 +96,7 @@ if __name__ == "__main__":
             print("\n" * 2)
 
             name = f"{dataset_name}_{time}_days"
+
             main(AOI, dataset_name, time, subfolder, name)
 
             print("\n" * 2)
