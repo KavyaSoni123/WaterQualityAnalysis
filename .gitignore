@@ -80,3 +80,4 @@ notebooks/temp/
 
 #Ignore Test Files
 test*.py
+config.py
