@@ -17,19 +17,21 @@ except Exception as e:
 
 DATA_AOI_DICT = {
     # AOI for Lake Baikal
-    "Lake_baikal": ee.Geometry.Polygon(
+    "Lake Laguna del Sauce(678)": ee.Geometry.Polygon(
         [
-            [102.71284237056808, 50.95014919458215],
-            [111.61176815181808, 50.95014919458215],
-            [111.61176815181808, 55.991032052704064],
-            [102.71284237056808, 55.991032052704064],
-            [102.71284237056808, 50.95014919458215],
+            [
+                [-55.15955499801229, -34.86322531821784],
+                [-55.01638940963338, -34.86322531821784],
+                [-55.01638940963338, -34.750749124649445],
+                [-55.15955499801229, -34.750749124649445],
+                [-55.15955499801229, -34.86322531821784],  # Close the polygon
+            ]
         ]
     ),
     # add more lakes here(no chat gpt for AOI)
 }
 
-timeframes = [1, 3, 5, 7, 14]
+timeframes = [1, 7]
 
 
 # Lake erie coordinate(kept for tesing purposes)
