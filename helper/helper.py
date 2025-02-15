@@ -1,5 +1,7 @@
 def lookup_table(df, cluster):
-    return df[df["Cluster"] == cluster][["Latitude", "Longitude", "Region", "Date"]]
+    return df[df["Cluster"] == cluster][
+        ["Latitude", "Longitude", "Region", "Date", "Station Identifier"]
+    ]
 
 
 def sort_cluster_by_feature(df, feature, top_n=5):
