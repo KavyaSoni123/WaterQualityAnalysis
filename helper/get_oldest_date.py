@@ -2,7 +2,15 @@ from datetime import datetime
 import ee
 
 
-def print_oldest_dates(AOI):
+def print_oldest_dates(latitude, longitude):
+    latitude = 19.67497
+    longitude = -101.61774
+
+    # Create a Point geometry
+    point = ee.Geometry.Point([longitude, latitude])
+
+    # Define an AOI by buffering around the point (e.g., 500 meters)
+    AOI = point.buffer(500)
     S2 = (
         ee.ImageCollection("COPERNICUS/S2_SR_HARMONIZED")
         .filterBounds(AOI)
