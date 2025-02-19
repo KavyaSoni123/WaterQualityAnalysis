@@ -24,8 +24,9 @@ debug.log
 *.out
 *.tmp
 
-# Ignore Jupyter Notebook checkpoints
+# Ignore Jupyter Notebook checkpoints and test notebooks
 .ipynb_checkpoints/
+test*.ipynb  # Ignore all Jupyter notebooks starting with "test"
 
 # Ignore dependencies (if using Poetry)
 .poetry/
@@ -70,14 +71,15 @@ poetry.lock
 data/raw/
 data/temp/
 
-#ignore notebooks
+# Ignore notebooks
 notebooks/temp/
 
 # Ignore VS Code workspace settings
 .vscode/
 *.code-workspace
 
-
-#Ignore Test Files
+# Ignore Test Files
 test*.py
+test*.ipynb
+# Ignore all content in config.py
 config.py

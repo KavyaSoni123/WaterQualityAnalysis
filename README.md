@@ -4,7 +4,7 @@
 This project focuses on analyzing **water quality** by integrating **Sentinel-2 satellite imagery** with **in-situ water quality measurements**. The primary data sources include:  
 
 - **Sentinel-2 satellite imagery** via **Google Earth Engine (GEE) API**  
-- **Gloria dataset**, which provides water quality data for major lakes in the USA  
+- **Gemstat dataset**, which provides water quality data for major lakees in the world  
 
 By leveraging spectral bands from Sentinel-2, the project aims to explore correlations between **satellite-derived parameters** and **water quality indicators** such as **chlorophyll-a, turbidity, total suspended solids (TSS), and more**.  
 
