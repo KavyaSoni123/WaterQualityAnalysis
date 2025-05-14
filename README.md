@@ -1,166 +1,126 @@
-# Water Quality Analysis Project
+# 🌊 Water Quality Analysis Project
 
-## Overview
-This project focuses on analyzing water quality using a combination of satellite data and in-situ measurements. The primary data sources include Sentinel-2 satellite imagery accessed through the Google Earth Engine (GEE) API and the Gloria dataset, which provides water quality data for major lakes in the USA. By integrating these datasets, the project aims to explore the relationship between satellite-derived parameters and water quality indicators such as chlorophyll-a, turbidity, and more.
+## 📌 Overview  
+This project focuses on analyzing **water quality** by integrating **Sentinel-2 satellite imagery** with **in-situ water quality measurements**. The primary data sources include:  
 
-## Features
-- Fetching Sentinel-2 satellite data using the GEE API in Python.
-- Utilizing the Gloria dataset, which includes detailed water quality measurements.
-- Joining satellite band data with Gloria dataset features for comprehensive analysis.
-- Leveraging spectral bands (B2 to B12) from Sentinel-2 to derive insights into water quality parameters.
+- **Sentinel-2 satellite imagery** via **Google Earth Engine (GEE) API**  
+- **Gemstat dataset**, which provides water quality data for major lakees in the world  
 
-## Dataset Details
-### Gloria Dataset
-- **Columns Used**:
-  - `Site_name`
-  - `Country`
-  - `Country_code`
-  - `Latitude`
-  - `Longitude`
-  - `Date_Time_UTC`
-  - `Water_body_type`
-  - `Water_type`
-  - `Depth`
-  - `Chla` (Chlorophyll-a)
-  - `TSS` (Total Suspended Solids)
-  - `Turbidity`
-  - `Secchi_depth`
-  - `Chla_plus_phaeo`
-  - `aCDOM440`
-  - `Date`
-  - `Time`
+By leveraging spectral bands from Sentinel-2, the project aims to explore correlations between **satellite-derived parameters** and **water quality indicators** such as **chlorophyll-a, turbidity, total suspended solids (TSS), and more**.  
 
-### Sentinel-2 Satellite Data
-- **Bands Used**:
-  - B2 (Blue)
-  - B3 (Green)
-  - B4 (Red)
-  - B5 (Red Edge 1)
-  - B6 (Red Edge 2)
-  - B7 (Red Edge 3)
-  - B8 (Near Infrared)
-  - B8A (Narrow NIR)
-  - B12 (Shortwave Infrared)
+---
 
-## Tools and Technologies
-- **Google Earth Engine (GEE)**: To fetch Sentinel-2 satellite data.
-- **Python**: For data processing and integration.
-- **Pandas**: For data manipulation and joining.
-- **Geospatial Libraries**: Such as `geopandas` or `shapely` for handling spatial data.
+## 🚀 Features  
+✅ Fetching **Sentinel-2 satellite data** using **Google Earth Engine (GEE) API** in Python  
+✅ Integrating **Gloria dataset** with spectral band information  
+✅ Performing **feature selection** to identify key **water quality indicators**  
+✅ **Analyzing correlations** between spectral bands and water parameters  
+✅ **Visualizing results** to interpret water quality trends  
 
-## Methodology
-1. **Fetching Satellite Data**:
-   - Used the GEE API to retrieve Sentinel-2 bands for specific locations and dates corresponding to the Gloria dataset.
+---
 
-2. **Data Preprocessing**:
-   - Cleaned and prepared the Gloria dataset.
-   - Extracted relevant satellite bands and matched them with in-situ measurements.
+## 🎯 Recommended Target Variables  
 
-3. **Data Integration**:
-   - Joined satellite band data with Gloria dataset columns based on location and time.
+The following **water quality indicators** are selected as target variables due to their strong correlation with spectral bands:  
 
-4. **Analysis**:
-   - Explored relationships between spectral bands and water quality parameters.
-   - Developed visualizations and models to understand water quality dynamics.
+### **1️⃣ Chlorophyll-a (Chl-a)**  
+🔹 **Reason**: Correlates strongly with **B4 (red), B5 (red-edge), B6, B7 (red-edge/NIR), and B8 (NIR)**  
+🔹 **Significance**: Chlorophyll absorbs blue/red light and reflects NIR, making it detectable via satellite  
 
-## Repository Structure
+### **2️⃣ Turbidity (TURB)**  
+🔹 **Reason**: Higher turbidity increases light scattering, affecting **B2 (blue), B3 (green), and B4 (red)**  
+🔹 **Significance**: Directly linked to sedimentation, pollution, and water clarity  
+
+### **3️⃣ Total Suspended Solids (TSS)**  
+🔹 **Reason**: Strongly related to **B2 (blue), B3 (green), B4 (red), and B8 (NIR)**  
+🔹 **Significance**: High TSS levels indicate sediment content and pollution  
+
+### **4️⃣ Dissolved Organic Carbon (DOC)**  
+🔹 **Reason**: Affects UV/blue light absorption, detected in **B2 (blue) and B3 (green)**  
+🔹 **Significance**: Influences water color and dissolved matter concentration  
+
+### **5️⃣ Total Phosphorus (TP) & Total Nitrogen (TN)**  
+🔹 **Reason**: Key nutrients for **algal blooms**, impacting reflectance in **B5, B6, and B7 (red-edge bands)**  
+🔹 **Significance**: Essential for **eutrophication** studies  
+
+### **6️⃣ Dissolved Oxygen (O2-Dis)**  
+🔹 **Reason**: Related to biological activity, inferred through **Chl-a, turbidity, and DOC**  
+🔹 **Significance**: Critical for assessing **water health** and **ecosystem balance**  
+
+### **7️⃣ Electrical Conductivity (EC) & Total Dissolved Solids (TDS)**  
+🔹 **Reason**: High salt content influences **B11 (SWIR1) and B12 (SWIR2)**  
+🔹 **Significance**: Important for measuring **water salinity** and **pollution levels**  
+
+💡 **Note**: Heavy metals (**Pb-Tot, Hg-Tot, Ni-Tot**) are **not selected** as they are not directly detectable via remote sensing.
+
+---
+
+## 🛰️ Sentinel-2 Satellite Data  
+
+### **🔹 Spectral Bands Used**
+| Band  | Name                  | Wavelength (nm) | Primary Use |
+|-------|-----------------------|----------------|-------------|
+| B2    | **Blue**              | 490            | Water clarity, turbidity |
+| B3    | **Green**             | 560            | Vegetation, water quality |
+| B4    | **Red**               | 665            | Chlorophyll absorption |
+| B5    | **Red Edge 1**        | 705            | Vegetation stress, water quality |
+| B6    | **Red Edge 2**        | 740            | Algal blooms, suspended matter |
+| B7    | **Red Edge 3**        | 783            | Nutrient levels, chlorophyll |
+| B8    | **Near Infrared (NIR)** | 842          | Biomass, algae detection |
+| B8A   | **Narrow NIR**        | 865            | Water quality analysis |
+| B11   | **Shortwave Infrared 1 (SWIR1)** | 1610 | Suspended solids, salinity |
+| B12   | **Shortwave Infrared 2 (SWIR2)** | 2190 | Organic matter, pollutants |
+
+📌 **Why These Bands?**  
+These bands cover the **visible (B2-B4), near-infrared (B5-B8A), and shortwave infrared (B11, B12)** spectrum, which are **optimal for detecting water quality changes**.  
+
+---
+
+## 🛠️ Tools & Technologies  
+
+- **🌍 Google Earth Engine (GEE)** → Fetch Sentinel-2 data  
+- **🐍 Python** → Data processing & integration  
+- **📊 Pandas** → Data manipulation & feature engineering  
+- **🌍 Geospatial Libraries (geopandas, shapely)** → Handling spatial data  
+
+---
+
+## 🔧 Setup Instructions  
+
+1️⃣ **Create Environment & Install Dependencies**  
+```bash
+python -m venv water_quality_env
+source water_quality_env/bin/activate   # On macOS/Linux
+water_quality_env\Scripts\activate      # On Windows
+pip install earthengine-api pandas geopandas
 ```
-water-quality-analysis/
-├── data/                     # Contains raw and processed data files
-├── notebooks/                # Jupyter notebooks for data exploration and analysis
-├── scripts/                  # Python scripts for data fetching and processing
-├── results/                  # Outputs and visualizations
-├── README.md                 # Project documentation
-└── requirements.txt          # List of dependencies
+
+2️⃣ **Authenticate Google Earth Engine (Only Once)**  
+```bash
+earthengine authenticate
 ```
 
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone <repository_url>
-   cd water-quality-analysis
-   ```
-2. Create a virtual environment and activate it:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+3️⃣ **Run the Analysis**  
+```bash
+python water_quality_analysis.py
+```
 
-## Usage
-1. Fetch Sentinel-2 data using the `gee_fetch.py` script in the `scripts` directory.
-2. Process and join data using the Jupyter notebooks in the `notebooks` directory.
-3. Run analysis and generate visualizations or models.
+---
 
-## Results
-Key insights from the project include correlations between Sentinel-2 spectral bands and water quality parameters such as:
-- Chlorophyll-a concentrations.
-- Turbidity and total suspended solids.
-- Secchi depth transparency.
+## 📌 Future Improvements  
 
-## Data Insights
-Below is the `df.info()` summary for each lake analyzed in the project:
+- ✅ Incorporate **machine learning models** for water quality prediction  
+- ✅ Improve **visualizations** for better data interpretation  
+- ✅ Extend analysis to **different water bodies & seasons**  
 
-- **Lake Erie**:
-  
-  <img width="390" alt="Screenshot 2025-01-08 at 3 33 35 PM" src="https://github.com/user-attachments/assets/ccec0185-11fb-4884-8702-2cabdd1849b8" />
+---
 
-- **Gulf of Mexico, FL**:
-  
-  <img width="398" alt="Screenshot 2025-01-08 at 3 34 36 PM" src="https://github.com/user-attachments/assets/2abe6cda-ba56-40eb-beff-075c81376d8b" />
+## 📜 License  
+This project is **open-source** under the **MIT License**.  
 
-- **Lake Geneva**:
-  
-  <img width="405" alt="Screenshot 2025-01-08 at 3 36 11 PM" src="https://github.com/user-attachments/assets/ddb925ca-2c3b-4d0a-b6ba-05f869bdbb1e" />
+---
 
-- **IJsselmeer**:
-  
-  <img width="400" alt="Screenshot 2025-01-08 at 3 36 58 PM" src="https://github.com/user-attachments/assets/f076e5d6-a900-42a2-8d16-a5438deb6bb2" />
+### **📬 Have Questions?**  
+Feel free to reach out or contribute to the project! 🚀  
 
-- **Guiana**:
-  
-  <img width="394" alt="Screenshot 2025-01-08 at 3 37 43 PM" src="https://github.com/user-attachments/assets/5bb63c10-26a7-4f5f-9ba3-fe0c602ce227" />
-
-- **Gulf of Mexico**:
-  
-  <img width="394" alt="Screenshot 2025-01-08 at 3 38 41 PM" src="https://github.com/user-attachments/assets/8227ef52-fcb5-4943-b2b1-e4c0c2904dc8" />
-
-- **Taihu**:
-  
-  <img width="398" alt="Screenshot 2025-01-08 at 3 39 32 PM" src="https://github.com/user-attachments/assets/d8584654-cf86-457e-9690-270f3532c96f" />
-
-- **English Channel**:
-  
-  <img width="394" alt="Screenshot 2025-01-08 at 3 41 38 PM" src="https://github.com/user-attachments/assets/0c8fc30b-d726-472b-bb4f-67f033cd15a4" />
-
-- **Garda**:
-  
-  <img width="397" alt="Screenshot 2025-01-08 at 3 42 23 PM" src="https://github.com/user-attachments/assets/1aec2434-86ba-4048-8dad-aa1b7d29cc3d" />
-
-- **Lake Kasumigaura**:
-  
-  <img width="394" alt="Screenshot 2025-01-08 at 3 43 09 PM" src="https://github.com/user-attachments/assets/0fe3f889-2591-46d9-9c42-142c3002d4f6" />
-
-- **Chesapeake Bay, MD**:
-  
-  <img width="395" alt="Screenshot 2025-01-08 at 3 43 58 PM" src="https://github.com/user-attachments/assets/4f96f6c8-602e-4603-abc7-246c2303ef57" />
-
-- **Atlantic Ocean, GA**:
-  
-  <img width="392" alt="Screenshot 2025-01-08 at 3 44 34 PM" src="https://github.com/user-attachments/assets/3ea61eb4-40e2-4041-a132-c208a766e780" />
-
-## Future Work
-- Expand the analysis to include additional water bodies globally.
-- Apply machine learning models to predict water quality parameters.
-- Incorporate other remote sensing datasets for enhanced analysis.
-
-## Contributors
-- **Kavya Soni**
-- **Sujal Rajput**
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
+---
