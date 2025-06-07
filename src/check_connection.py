@@ -1,5 +1,5 @@
 import ee
-from config import PROJECT_ID
+from config.config import PROJECT_ID
 from colorama import Fore, Style, init
 import time
 
